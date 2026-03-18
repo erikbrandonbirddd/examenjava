@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios3</title>
+</head>
+<body>
+    <h1>Ejercicios 3</h1>
+    <p id="salida1"></p>
+    
+    <script>
+        //7. Calcula el promedio de 3 números. Muestra los valores y el resultado por en el HTML
+        let a = 5;
+        let b = 7;
+        let c = 10;
+
+        let promedio = (a+b+c)/3;
+        document.getElementById("salida1").innerHTML+= `El promedio de los valores ${a}, ${b} y ${c} es: ${promedio} <br>`;
+
+
+        //8. Convertir grados Celsius en grados Fahrenheit. Muestra el resultado en el HTML 
+        let C=15;
+        let F = (C*9/5) + 32;
+
+        document.getElementById("salida1").innerHTML+= `${C} grados Celcius equivalen a ${F} grados Fahrenheit. <br>`
+
+        //9. Convertir horas a segundos. El valor de las horas se debe obtener del usuario. Muestra el resultado en el HTML
+
+        let horas=prompt("Horas");
+        horas=Number(horas);
+    
+        let segundos = horas * 60 * 60;
+        
+        document.getElementById("salida1").innerHTML+= `${horas} horas son ${segundos} segundos. <br>`
+        
+    </script>
+</body>
+</html>

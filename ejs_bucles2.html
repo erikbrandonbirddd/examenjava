@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Crea un programa que lea una calificación (0 a 100) y muestre en la consola la letra equivalente:
+        // A: 90-100
+        // B: 80-89
+        // C: 70-79
+        // D: <70
+        let numero = prompt("Indica el número menor que 100 para obtener una calificación");
+        console.log("El número es: ", numero);
+
+        if (numero>100) {
+            console.log("Imposible, no puede ser mayor que 100");
+        }
+        else {
+            if (numero<=100 && numero >=90) {
+                console.log("La calificación obtenida es A");
+            }
+            else {
+                if (numero>=80) {
+                    console.log("La calificación obtenida es B");   
+                }
+                else {
+                    if (numero>=70) {
+                        console.log("La calificación obtenida es C");
+                    }
+                    else {
+                        console.log("La calificación obtenida es D");
+                    }
+                }
+            }
+        }
+        
+        
+    </script>
+
+    <script>
+        //Escribe un programa que imprima por consola los números del 100 al 150
+        let i =100;
+        for (i; i<=150; i++) {
+            console.log("Número: ", i);
+        }
+    </script>
+
+    <script>
+        //Escribe un programa que sume los números del 1 al 50
+        //el cálculo es suma=(n*(n+1))/2
+        j = 1;
+        let suma = 0;
+        for (j; j<=50; j++) {
+            suma = suma + j;
+            console.log("La suma va: ", suma, "j va: ", j);
+        }
+        console.log("La suma de los 50 primeros números naturales es: ", suma);
+    </script>
+
+    <script>
+        //Escribe un programa que imprima la tabla de multiplicar del 5, del 1 al 10.
+        let k=1;
+        let multiplicacion = 1;
+        for (k; k<=10; k++){
+            multiplicacion = 5 * k;
+            console.log("La multiplicación es: 5 * ", k, " = ", multiplicacion);
+        }
+    </script>
+
+    <script>
+        //Crea un programa que imprima todos los números pares entre 1 y 20.
+        let l=1;
+        let resto=1;
+        for(l; l<=20; l++) {
+           resto = l%2;
+           if (resto == 0) {
+            console.log ("El numero ", l, "es par")
+           }
+        }
+    </script>
+
+    
+ <p id="cuenta"></p>
+         <script>
+            //Contador básico: escribe un programa que imprima los números del 1 al 10 usando un bucle while
+            let contador = 1 ;
+            while (contador<=10){
+                document.getElementById("cuenta").innerHTML+=("Número " + contador+ "<br>");
+                contador++;
+            }
+         </script>
+
+
+</body>
+</html>

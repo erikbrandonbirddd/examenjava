@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <p id="original">Texto original. Elige:</p>
+
+    <button onclick="cambiaTexto('hola')">Hola</button>
+    <button onclick="cambiaTexto('adiós')">Adiós</button>
+    <button onclick="restauraTexto()">Al principio</button>
+
+    <!-- Sintaxis de un botón con el evento onclick
+    <button onclick="myFunction()">Click me</button>
+    -->
+
+    <p id="segundo">Mi segundo párrafo</p>
+    <button onclick="cambiaTexto2()">El usuario escribe</button>
+
+    <script>
+        let textoInicial = document.getElementById("original").textContent;
+        function cambiaTexto(texto) {
+        document.getElementById("original").textContent = texto;
+    }
+
+    function restauraTexto() {
+        document.getElementById("original").textContent = textoInicial;
+    }
+
+    function restauraTexto() {
+        document.getElementById("original").textContent = textoInicial;
+    }
+
+    function cambiaTexto2() {
+        let textoUsuario = prompt("Escribe un texto:");
+        document.getElementById("segundo").textContent = textoUsuario;
+    }
+</script>
+
+</body>
+</html>

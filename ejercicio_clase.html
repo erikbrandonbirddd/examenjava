@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Tecnología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Bienvenido a la Tienda de Tecnología</h1>
+
+    <p class="descripcion">Explora nuestros productos más vendidos:</p>
+
+    <div id="catalogo">
+        <div class="producto">
+            <h3 class="nombre">Laptop Gamer</h3>
+            <p class="precio">Precio: 1500€</p>
+            <p class="info">Potente laptop con tarjeta gráfica dedicada.</p>
+        </div>
+
+        <div class="producto">
+            <h3 class="nombre">Smartphone Pro</h3>
+            <p class="precio">Precio: 999€</p>
+            <p class="info">Teléfono con cámara de última generación.</p>
+        </div>
+
+        <div class="producto">
+            <h3 class="nombre">Auriculares Inalámbricos</h3>
+            <p class="precio">Precio: 199€</p>
+            <p class="info">Sonido envolvente y batería de larga duración.</p>
+        </div>
+    </div>
+
+    <button onclick="cambiarTitulo()">Cambiar Título</button>
+    <button onclick="resaltarProductos()">Resaltar Productos</button>
+    <button onclick="cambiarPrecio()">Cambiar Precio Primer Producto</button>
+    <button onclick="ocultarDescripcion()">Ocultar Descripciones</button>
+
+    <script>
+        /*1. La función cambiarTítulo cambia el contenido tanto del id=titulo
+como del párrafo class=descripcion */
+
+function cambiarTitulo() {
+    document.getElementById("titulo").textContent = "Tienda hackeada";
+    let subtitulo = document.getElementsByClassName("descripcion");
+    console.log (subtitulo);
+    subtitulo[0].textContent = "Los precios cambian y la info también"; 
+}
+
+
+/*2. La función resaltarProductos cambia el estilo de texto de productos
+class="nombres" de manera que sea vean en rojo y con fondo background azul*/
+
+function resaltarProductos() {
+    let productos = document.getElementsByClassName("nombre");
+    console.log(productos);
+    let i = 0;
+    for (i; i<productos.length;i++) {
+        productos[i].style.color = "red";
+        productos[i].style.backgroundColor = "blue";
+    }
+}
+
+
+/*3. La función cambiarPrecio() cambia el valor del precio del portátil*/
+function cambiarPrecio() {
+    console.log(document.querySelector(".precio"));
+    document.querySelector(".precio").textContent="€10";
+}
+
+
+/*4. La función ocultarDescripción modifica todos los párrafos class="info"
+de manera que se vean vacíos*/
+/*5. Como segunda parte intenta guardar los textos de la info antes de eliminarlos
+en un array y sácalos por consola*/
+
+function ocultarDescripcion() {
+    let descripcion = document.querySelectorAll(".info");
+    console.log(descripcion);
+    let datos = [];
+    let i=0;
+    for (i; i<descripcion.length; i++) {
+        datos[i]=descripcion[i].textContent;
+        descripcion[i].textContent = "";
+    }
+    console.log("datos: ", datos);
+}
+    </script>
+
+</body>
+</html>

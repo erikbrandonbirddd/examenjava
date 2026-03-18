@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Escribe un programa que lea un número por pantalla y muestre en la consola si es mayor que 10.
+        let numero = prompt("Escribe un número:" );
+
+        numero=parseInt(numero); //esto no es necesario
+
+        console.log("Número: ", numero);
+
+        if (numero > 10) {
+            console.log ("El número es mayor que 10");
+        }
+    </script>
+
+    <script>
+        //Con el mismo número anterior, indica si el número es positivo o negativo
+        if (numero>=0) {
+            console.log("El número es positivo");
+        }
+        else {
+            console.log("El número es negativo");
+        }
+            
+    </script>
+
+     <script>
+        //Indica si el número está dentro del rango 3 - 7
+        if (numero >=3 && numero <=7) {
+            console.log("El número está en el rango de valores [3-7]");
+        }
+        else {
+            console.log("El número no está en el rango de valores [3-7]");
+        }
+    </script>
+
+    <script>
+        //Indica si el número está dentro del rango 10-20 o entre el rango 21-30
+        if (numero>=10 && numero<=20) {
+            console.log("El número está en el rango de valores [10-20]"); 
+        }
+        else {
+            if (numero>=21 && numero<30) {
+                console.log("El número está en el rango de valores [21-30]");    
+            }
+            else {
+                console.log("El número no está en el rango de valores [10-30]");
+            }
+        }
+    </script>
+
+    
+
+</body>
+</html>

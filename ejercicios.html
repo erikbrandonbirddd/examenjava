@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Tecnología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="titulo">Bienvenido a la Tienda de Tecnología</h1>
+
+    <p class="descripcion">Explora nuestros productos más vendidos:</p>
+
+    <div id="catalogo">
+        <div class="producto">
+            <h3 class="nombre">Laptop Gamer</h3>
+            <p class="precio">Precio: 1500€</p>
+            <p class="info">Potente laptop con tarjeta gráfica dedicada.</p>
+        </div>
+
+        <div class="producto">
+            <h3 class="nombre">Smartphone Pro</h3>
+            <p class="precio">Precio: 999€</p>
+            <p class="info">Teléfono con cámara de última generación.</p>
+        </div>
+
+        <div class="producto">
+            <h3 class="nombre">Auriculares Inalámbricos</h3>
+            <p class="precio">Precio: 199€</p>
+            <p class="info">Sonido envolvente y batería de larga duración.</p>
+        </div>
+    </div>
+
+    <button onclick="agregarProducto()">Agregar un producto al final</button>
+    <button onclick="reemplazarProducto()">Reemplazar el primer producto</button>
+    <button onclick="eliminarUltimoProducto()">Eliminar el último producto</button>
+    <button onclick="eliminarTodos()">Eliminar todos los productos</button>
+    <script>
+        function agregarProducto() {
+
+    let nombreProducto = document.createElement("h3");
+    let textoNombre = document.createTextNode("Tablet X");
+    nombreProducto.appendChild(textoNombre);
+    nombreProducto.setAttribute("class", "nombre");
+
+    let precioProducto = document.createElement("p");
+    let textoPrecio = document.createTextNode("Precio: 499€");
+    precioProducto.appendChild(textoPrecio);
+    precioProducto.setAttribute("class", "precio");
+
+    let infoProducto = document.createElement("p");
+    let textoInfo = document.createTextNode("Pantalla HD y batería de larga duración");
+    infoProducto.appendChild(textoInfo);
+    infoProducto.setAttribute("class", "info");
+
+    
+    const producto = document.createElement("div");
+    producto.setAttribute("class", "producto");
+
+    producto.appendChild(nombreProducto);
+    producto.appendChild(precioProducto);
+    producto.appendChild(infoProducto);
+    
+    
+    const catalogo = document.getElementById("catalogo");
+    catalogo.appendChild(producto);
+
+    
+
+    
+}
+
+function reemplazarProducto() {
+
+    let nombreProducto = document.createElement("h3");
+    let textoNombre = document.createTextNode("Monitor Ultra HD");
+    nombreProducto.appendChild(textoNombre);
+    nombreProducto.setAttribute("class", "nombre");
+
+    let precioProducto = document.createElement("p");
+    let textoPrecio = document.createTextNode("Precio: 299€");
+    precioProducto.appendChild(textoPrecio);
+    precioProducto.setAttribute("class", "precio");
+
+    let infoProducto = document.createElement("p");
+    let textoInfo = document.createTextNode("Resolución 4K para una experiencia visual increíble");
+    infoProducto.appendChild(textoInfo);
+    infoProducto.setAttribute("class", "info");
+
+
+    const primeroviejo = document.querySelector(".producto");
+    const nombreviejo=document.querySelector(".nombre")
+    primeroviejo.replaceChild(nombreProducto, nombreviejo);
+    const precioviejo=document.querySelector(".precio");
+    primeroviejo.replaceChild(precioProducto, precioviejo);
+    const infoviejo=document.querySelector(".info");
+    primeroviejo.replaceChild(infoProducto, infoviejo);
+
+}
+
+
+function eliminarUltimoProducto() {
+
+    let catalogo = document.getElementById("catalogo");
+    console.log(catalogo);
+    let producto = document.getElementsByClassName("producto");
+    console.log(producto);
+    let longitud = producto.length;
+    catalogo.removeChild(producto[longitud-1]);
+
+}
+
+function eliminarTodos() {
+    let catalogo = document.getElementById("catalogo");
+    console.log(catalogo);
+    let producto = document.getElementsByClassName("producto");
+    console.log(producto);
+    let longitud = producto.length;
+    console.log(longitud);
+    for (longitud;longitud>0;longitud--){
+        catalogo.removeChild(producto[longitud-1]);
+        console.log(producto);
+        console.log(longitud);
+    }
+}
+    </script>
+
+</body>
+</html>
